@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from MapNews.views import index
@@ -21,4 +22,5 @@ from MapNews.views import get_values
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    url('get_values',get_values, name='get_values')
 ]
