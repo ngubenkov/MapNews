@@ -16,15 +16,14 @@
     <script>
 // Initialize and add the map
 function initMap() {
-    console.log("ere");
-    var uluru = {'lat': 51.50072919999999, 'lng': -0.1246254};
-    var f = {{ f }};
-    console.log("ere2");
-  // The map, centered at Uluru
+    var location = {{ location|safe }};
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: f});
+      document.getElementById('map'), {zoom: 2, center: location[0]});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: f, map: map});
+
+    location.forEach(function (item) {
+        new google.maps.Marker({position: item, map: map});
+    })
 }
 
     </script>
