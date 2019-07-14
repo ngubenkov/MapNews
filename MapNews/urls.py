@@ -21,5 +21,4 @@ from MapNews.views import get_values
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('get_values/', get_values)
 ]
